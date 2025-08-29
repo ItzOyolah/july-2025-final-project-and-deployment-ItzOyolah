@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ochieng Enterprises - Premium Decoration Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-black: #0a0a0a;
+            --secondary-black: #1a1a1a;
+            --dark-black: #000000;
+            --primary-gold: #d4af37;
+            --light-gold: #f1e5ac;
+            --dark-gold: #b8860b;
+            --white: #ffffff;
+            --light-gray: #f1f1f1;
+            --dark-gray: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--primary-black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--primary-gold), var(--dark-gold));
+            color: var(--dark-black);
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.6);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-gold);
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--light-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: rgba(10, 10, 10, 0.95);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.2rem 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--dark-gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+            font-size: 20px;
+            color: var(--dark-black);
+        }
+        
+        .logo-text {
+            color: var(--white);
+        }
+        
+        .logo-text span {
+            color: var(--primary-gold);
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1758&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--primary-gold), var(--light-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            color: var(--light-gray);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-gold);
+            color: var(--dark-black);
+        }
+        
+        /* CEO Section */
+        .ceo-section {
+            padding: 8rem 0;
+            background-color: var(--secondary-black);
+        }
+        
+        .ceo-container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+        
+        .ceo-image {
+            flex: 1;
+            position: relative;
+        }
+        
+        .ceo-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .ceo-image:hover .ceo-img {
+            transform: translateY(-10px);
+        }
+        
+        .ceo-image::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--primary-gold);
+            border-radius: 20px;
+            top: 20px;
+            left: 20px;
+            z-index: -1;
+        }
+        
+        .ceo-content {
+            flex: 1;
+        }
+        
+        .ceo-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-gold);
+        }
+        
+        .ceo-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--light-gray);
+            font-weight: 500;
+        }
+        
+        .ceo-content p {
+            margin-bottom: 1.5rem;
+            color: var(--light-gray);
+            line-height: 1.8;
+        }
+        
+        .ceo-signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: var(--primary-gold);
+            margin-top: 2rem;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 8rem 0;
+            background-color: var(--primary-black);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .service-card {
+            background: var(--dark-black);
+            padding: 2.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-gold), var(--dark-gold));
+            transition: width 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .service-card:hover::before {
+            width: 100%;
+            opacity: 0.1;
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-gold);
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+        
+        .service-card p {
+            color: var(--light-gray);
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            padding: 8rem 0;
+            background-color: var(--secondary-black);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            height: 280px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        .gallery-caption h3 {
+            font-size: 1.2rem;
+            color: var(--primary-gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .gallery-caption p {
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 8rem 0;
+            background-color: var(--primary-black);
+        }
+        
+        .testimonial-container {
+            position: relative;
+        }
+        
+        .testimonial {
+            background: var(--dark-black);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            margin: 0 auto;
+            max-width: 800px;
+            display: none;
+        }
+        
+        .testimonial.active {
+            display: block;
+            animation: fadeIn 0.8s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .testimonial-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: var(--light-gray);
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-gold);
+            font-size: 1.2rem;
+        }
+        
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            background: var(--dark-gray);
+            border-radius: 50%;
+            margin: 0 0.5rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .testimonial-dot.active {
+            background: var(--primary-gold);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 8rem 0;
+            background-color: var(--secondary-black);
+        }
+        
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--dark-black);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: var(--secondary-black);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+        
+        .contact-item p, .contact-item a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-item a:hover {
+            color: var(--primary-gold);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--secondary-black);
+            color: var(--primary-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--primary-gold);
+            color: var(--dark-black);
+            transform: translateY(-5px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-black);
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-links li {
+            margin: 0 1.5rem;
+        }
+        
+        .footer-links a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-gold);
+        }
+        
+        .copyright {
+            color: var(--light-gray);
+            border-top: 1px solid var(--dark-gray);
+            padding-top: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .ceo-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .ceo-image::before {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 70%;
+                flex-direction: column;
+                background: var(--secondary-black);
+                align-items: center;
+                justify-content: center;
+                transition: right 0.5s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+            
+            .hamburger {
+                display: block;
+                z-index: 1001;
+            }
+            
+            .hamburger span {
+                display: block;
+                width: 30px;
+                height: 3px;
+                background: var(--white);
+                margin: 6px 0;
+                transition: all 0.3s ease;
+            }
+            
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 8px);
+            }
+            
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -8px);
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .service-card, .gallery-item {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-container {
+                padding: 0 1rem;
+            }
+            
+            .hero {
+                padding: 0 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 0.8rem 1.8rem;
+            }
+            
+            .ceo-section, .services, .gallery, .testimonials, .contact {
+                padding: 5rem 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .testimonial {
+                padding: 2rem;
+            }
+            
+            .testimonial-text {
+                font-size: 1.1rem;
+            }
+            
+            .contact-container {
+                padding: 2rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+            }
+            
+            .footer-links li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <div class="logo-img">OE</div>
+                <div class="logo-text">Ochieng <span>Enterprises</span></div>
+            </a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#ceo">CEO</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Transform Your Space With Elegance</h1>
+            <p>Premium decoration services that bring luxury and style to your home or event</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/20106886021" class="btn"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+                <a href="#gallery" class="btn btn-outline">View Our Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CEO Section -->
+    <section id="ceo" class="ceo-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Our CEO</h2>
+                <p>The visionary behind Ochieng Enterprises</p>
+            </div>
+            <div class="ceo-container">
+                <div class="ceo-image">
+                    <!-- Replace with your actual photo -->
+                    <img src="<a href="https://ibb.co/VYyXtgr4"><img src="https://i.ibb.co/gZ1s3SHK/Whats-App-Image-2025-08-23-at-15-10-22-1.jpg" alt="Whats-App-Image-2025-08-23-at-15-10-22-1" border="0"></a>" alt="Eric Ochieng - CEO of Ochieng Enterprises" class="ceo-img">
+                </div>
+                <div class="ceo-content">
+                    <h2>Eric Ochieng</h2>
+                    <h3>Founder & Chief Executive Officer</h3>
+                    <p>With vast  experience in the decoration industry, Eric Ochieng Opiyo founded Ochieng Enterprises with a vision to transform spaces into works of art. His passion for design and attention to detail has made the company a leader in luxury decorations.</p>
+                    <p>Eric believes that every space tells a story, and his mission is to help clients create environments that reflect their personality and style while maintaining the highest standards of quality and elegance.</p>
+                    <p>Under his leadership, Ochieng Enterprises has completed hundreds of successful projects for both residential and commercial clients, earning a reputation for excellence and innovation in the decoration industry.</p>
+                    <div class="ceo-signature">Eric Ochieng Opiyo</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Decoration Services</h2>
+                <p>We offer a wide range of premium decoration services for homes and events</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Home Decoration</h3>
+                    <p>Transform your living space with our expert interior design and decoration services.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎉</div>
+                    <h3>Event Decoration</h3>
+                    <p>Make your special occasions unforgettable with our stunning event decoration solutions.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💒</div>
+                    <h3>Wedding Decor</h3>
+                    <p>Create the wedding of your dreams with our exquisite decoration and styling services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Work Gallery</h2>
+                <p>Browse through our portfolio of completed decoration projects</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="<a href="https://ibb.co/35F7nD8k"><img src="https://i.ibb.co/BH6t9X7w/Whats-App-Image-2025-08-23-at-15-11-43.jpg" alt="Whats-App-Image-2025-08-23-at-15-11-43" border="0"></a>" alt="Birthday Celebrations" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Birthday Celebration</h3>
+                        <p>We turn birthdays into unforgettable memories! Celebrate your special day with style and elegance-let us handle the magic</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="<a href="https://ibb.co/tMLYrydr"><img src="https://i.ibb.co/Z62cDyZD/Whats-App-Image-2025-08-23-at-15-11-42-1.jpg" alt="Whats-App-Image-2025-08-23-at-15-11-42-1" border="0"></a>" alt="Wedding Decoration" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Luxury Wedding</h3>
+                        <p>Elegant wedding decoration with gold and black theme</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="<a href="https://ibb.co/4Z1gfcg5"><img src="https://i.ibb.co/PZDzYRzf/Whats-App-Image-2025-08-23-at-15-11-40-1.jpg" alt="Whats-App-Image-2025-08-23-at-15-11-40-1" border="0"></a>" alt="Corporate Event" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Corporate Event</h3>
+                        <p>Professional decoration for corporate gatherings</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="<a href="https://ibb.co/pBZjk4yM"><img src="https://i.ibb.co/wFCh2psP/Whats-App-Image-2025-08-23-at-15-10-17.jpg" alt="Whats-App-Image-2025-08-23-at-15-10-17" border="0"></a>" alt="Dining Room" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Elegant Dining Space</h3>
+                        <p>Sophisticated dining area with luxury finishes</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="<a href="https://ibb.co/xqwyqcSb"><img src="https://i.ibb.co/8gGJgRDw/Whats-App-Image-2025-08-23-at-15-10-22.jpg" alt="Whats-App-Image-2025-08-23-at-15-10-22" border="0"></a>" alt="Event Center" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Event Venue</h3>
+                        <p>Complete event space decoration and styling</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="<a href="https://ibb.co/7xX8GWhg"><img src="https://i.ibb.co/Gf0BV2ms/Whats-App-Image-2025-08-23-at-15-11-42.jpg" alt="Whats-App-Image-2025-08-23-at-15-11-42" border="0"></a width="300px">" alt="Outdoor Deco" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Outdoor Deco</h3>
+                        <p>Outdoor Deco design with premium materials</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+                <p>What our clients say about our decoration services</p>
+            </div>
+            <div class="testimonial-container">
+                <div class="testimonial active">
+                    <p class="testimonial-text">"Ochieng Enterprises transformed our wedding venue into a magical space. Their attention to detail and creative ideas made our special day even more memorable. The gold and black theme was executed perfectly!"</p>
+                    <p class="testimonial-author">- Sarah & Michael, Nairobi</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"I hired Ochieng Enterprises to decorate my new apartment, and I couldn't be happier with the results. They understood my style and created a luxurious yet comfortable space that reflects my personality."</p>
+                    <p class="testimonial-author">- James Kimani, Karen</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"The corporate event decoration exceeded our expectations. The team was professional, creative, and delivered on time. Our guests were impressed with the elegant setup."</p>
+                    <p class="testimonial-author">- Linda Atieno, Safaricom PLC</p>
+                </div>
+                <div class="testimonial-nav">
+                    <div class="testimonial-dot active" data-index="0"></div>
+                    <div class="testimonial-dot" data-index="1"></div>
+                    <div class="testimonial-dot" data-index="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with us for a consultation on your decoration project</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Phone</h3>
+                        <a href="tel:+254111902379">011 190 2370</a>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <a href="mailto:opiyoeric1998@gmail.com">opiyoeric1998@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Location</h3>
+                        <p>Kisumu, Kenya</p>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://wa.me/254111902370" class="social-link">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://facebook.com/OCHIENGENTERPRISES" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="mailto:opiyoeric1998@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="tel:+254111902370" class="social-link">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <a href="#" class="footer-logo">Ochieng Enterprises</a>
+            <ul class="footer-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#ceo">CEO</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="social-links">
+                <a href="https://wa.me/254111902370" class="social-link">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://facebook.com/OCHIENGENTERPRISES" class="social-link">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="mailto:opiyoeric1998@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="tel:+254111902370" class="social-link">
+                    <i class="fas fa-phone"></i>
+                </a>
+            </div>
+            <p class="copyright">© 2025 OCHIENG ENTERPRISES. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Navigation
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+            
+            // Close mobile nav when clicking on a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+            
+            // Testimonial Slider
+            const testimonials = document.querySelectorAll('.testimonial');
+            const dots = document.querySelectorAll('.testimonial-dot');
+            let currentTestimonial = 0;
+            
+            function showTestimonial(index) {
+                testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                testimonials[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentTestimonial = index;
+            }
+            
+            dots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    showTestimonial(index);
+                });
+            });
+            
+            // Auto-rotate testimonials
+            setInterval(() => {
+                currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+                showTestimonial(currentTestimonial);
+            }, 5000);
+            
+            // Header scroll effect
+            const header = document.querySelector('header');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.style.padding = '0.8rem 0';
+                    header.style.backgroundColor = 'rgba(10, 10, 10, 0.98)';
+                } else {
+                    header.style.padding = '1.2rem 0';
+                    header.style.backgroundColor = 'rgba(10, 10, 10, 0.95)';
+                }
+            });
+            
+            // Animate elements on scroll
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.service-card, .gallery-item, .testimonial, .contact-item, .ceo-container');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.style.opacity = 1;
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Initialize animation styles
+            document.querySelectorAll('.service-card, .gallery-item, .testimonial, .contact-item, .ceo-container').forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            window.addEventListener('scroll', animateOnScroll);
+            // Trigger once on load
+            animateOnScroll();
+        });
+    </script>
+</body>
+</html>
